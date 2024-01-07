@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  color: rgb(206, 228, 227);
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  font-family: "Montserrat", sans-serif;
+  overflow-y: hidden;
+}
+
+.scores {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  min-width: 400px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  p,
+  span {
+    margin: auto;
+    font-size: 1.5rem;
+  }
+}
+.game {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  padding: 20px;
+  .choices {
+    display: flex;
+    justify-content: space-around;
+    .player-choice {
+      transform: rotateY(180deg);
+    }
+  }
+  .results-text {
+    font-size: 2rem;
+    text-align: center;
+    margin: 10px;
+    user-select: none;
+    font-weight: 500;
+  }
+  .option {
+    border: none;
+    background: none;
+    margin: 20px;
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      transform: scale(110%);
+      cursor: pointer;
+    }
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
+.reset-game {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  font-size: 2rem;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  min-width: 200px;
+  border: none;
+  cursor: pointer;
+  color: rgb(206, 228, 227);
+  font-family: "Montserrat", sans-serif;
+  transition: ease-in-out 0.3s;
+  &:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+}

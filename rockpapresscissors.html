@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <title>ROCK | PAPERS | SCISSORS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="scores">
+      <p class="player">PLAYER</p>
+      <span class="player-points"></span>
+      <span class="comp-points"></span>
+      <p class="comp">COMP</p>
+    </div>
+    <div class="game">
+      <div class="choices">
+        <div class="player-choice">
+          <img src="images/rockchoice.png" alt="" />
+        </div>
+        <div class="cpu-choice"><img src="images/rockchoice.png" alt="" /></div>
+      </div>
+      <p class="results-text">Choose an option!</p>
+
+      <div class="options">
+        <button class="option" data-option="ROCK">
+          <span></span>
+          <img src="images/rock.png" alt="" />
+        </button>
+        <button class="option" data-option="PAPER">
+          <span></span>
+          <img src="images/paper.png" alt="" />
+        </button>
+        <button class="option" data-option="SCISSORS">
+          <img src="images/scissors.png" alt="" />
+        </button>
+      </div>
+    </div>
+    <button class="reset-game">Reset</button>
+    <script src="main.js"></script>
+  </body>
+</html>
