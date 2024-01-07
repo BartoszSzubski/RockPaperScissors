@@ -6,6 +6,8 @@ const playerChoiceSpan = document.querySelector(".player-choice");
 const compChoiceSpan = document.querySelector(".comp-choice");
 const resultText = document.querySelector(".results-text");
 const resetGame = document.querySelector(".reset-game");
+const playerHand = document.querySelector(".player-hand");
+const computerHand = document.querySelector(".computer-hand");
 
 let playerPoints = 0;
 let compPoints = 0;
@@ -21,7 +23,8 @@ function startGame() {
 window.onload = startGame;
 
 function playerSelect(event) {
-  playerChoice = event.target.dataset.option;
+  playerChoice = event.currentTarget.dataset.option.toLowerCase();
+  playerChoiceSpan.innerHTML = playerChoice;
   compSelect();
 }
 
@@ -31,6 +34,10 @@ const computerOptions = ["rock", "paper", "scissors"];
 function compSelect() {
   const randomIndex = Math.floor(Math.random() * computerOptions.length);
   compChoice = computerOptions[randomIndex];
+
+  // Update images for the hands
+  playerHand.src = `./images/${playerChoice}choice.png`;
+  computerHand.src = `./images/${compChoice}choice.png`;
 
   checkResult();
 }
