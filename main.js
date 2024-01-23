@@ -25,7 +25,7 @@ window.onload = startGame;
 function playerSelect(event) {
   playerChoice = event.currentTarget.dataset.option.toLowerCase();
   playerChoiceSpan.innerHTML = playerChoice;
-  compSelect();
+  setTimeout(compSelect, 400);
 }
 
 // cpu settings
@@ -36,8 +36,8 @@ function compSelect() {
   compChoice = computerOptions[randomIndex];
 
   // Update images for the hands
-  playerHand.src = `./images/${playerChoice}choice.png`;
-  computerHand.src = `./images/${compChoice}choice.png`;
+  playerHand.src = `./images/${this.textContent}.png`;
+  computerHand.src = `./images/${compChoice}.png`;
 
   checkResult();
 }
