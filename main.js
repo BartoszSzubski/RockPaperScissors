@@ -9,6 +9,12 @@ const resetGame = document.querySelector(".reset-game");
 const playerHand = document.querySelector(".player-hand");
 const computerHand = document.querySelector(".computer-hand");
 
+const choiceImages = {
+  paper: "paperchoice.png",
+  rock: "rockchoice.png",
+  scissors: "scissorschoice.png",
+};
+
 let playerPoints = 0;
 let compPoints = 0;
 let playerChoice = "";
@@ -24,8 +30,24 @@ window.onload = startGame;
 
 function playerSelect(event) {
   playerChoice = event.currentTarget.dataset.option.toLowerCase();
-  playerChoiceSpan.innerHTML = playerChoice;
-  setTimeout(compSelect, 400);
+  playerHand.src = `./images/${choiceImages[playerChoice]}`;
+  compSelect();
+
+  gsap
+    .timeline({
+      defaults: {
+        duration: 0.2,
+      },
+    })
+    .to(playerHand, {
+      scale: 1.2,
+    })
+    .to(playerHand, {
+      scale: 0.8,
+    })
+    .to(playerHand, {
+      scale: 1,
+    });
 }
 
 // cpu settings
@@ -36,8 +58,7 @@ function compSelect() {
   compChoice = computerOptions[randomIndex];
 
   // Update images for the hands
-  playerHand.src = `./images/${this.textContent}.png`;
-  computerHand.src = `./images/${compChoice}.png`;
+  computerHand.src = `./images/${choiceImages[compChoice]}`;
 
   checkResult();
 }
@@ -65,8 +86,6 @@ function checkResult() {
     winner = "Draw!";
   }
 
-  playerChoiceSpan.innerHTML = playerChoice;
-  compChoiceSpan.innerHTML = compChoice;
   resultText.innerHTML = winner;
 }
 
